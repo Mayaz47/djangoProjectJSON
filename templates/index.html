@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Tracker</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Trade Code</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Open</th>
+            <th>Close</th>
+            <th>Volume</th>
+            
+            <!-- Add more columns if needed -->
+        </tr>
+        {% for entry in data %}
+            <tr>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.trade_code }}</td>
+                <td>{{ entry.high }}</td>
+                <td>{{ entry.low}}</td>
+                <td>{{ entry.open }}</td>
+                <td>{{ entry.close }}</td>
+                <td>{{ entry.volume }}</td>
+                <!-- Add more columns if needed -->
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

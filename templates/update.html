@@ -1,0 +1,50 @@
+<!-- page2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Data</title>
+    
+</head>
+<body>
+    <h1>Update Data</h1>
+    <a href="{% url 'chart' %}"><--Home</a>
+    <form id="updateForm" method="post" action="{% url 'update' %}">
+    {% csrf_token %}
+    <div>
+        <label for="upDate">Date (Identify)</label>
+        <input type="text" name="upDate" required>
+    </div>
+    
+    <div>
+        <label for="upTradeCode">Trade Code(Identify)</label>
+        <input type="text" name="upTradeCode" required>
+    </div>
+    <div>
+        <label for="upHigh">New High:</label>
+        <input type="text" name="upHigh">
+    </div>
+    <div>    
+        <label for="upLow">New Low:</label>
+        <input type="text" name="upLow">
+    </div>
+    <div>    
+        <label for="upOpen">New Open:</label>
+        <input type="text" name="upOpen">
+    </div>
+    <div>    
+        <label for="upClose">New Close:</label>
+        <input type="text" name="upClose">
+    </div>
+    <div>   
+        <label for="upVolume">New Volume:</label>
+        <input type="text" name="upVolume">
+   </div>
+        
+    <button type="submit">Update</button>
+    
+    
+</form>
+   
+</body>
+</html>

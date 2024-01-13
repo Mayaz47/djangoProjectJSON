@@ -1,6 +1,10 @@
 from django.urls import path
-from .views import get_data
+from .views import chart,index2, delete,update
 
 urlpatterns = [
-    path('', get_data, name='get_data'),
+    path('', chart, name='chart'),
+    path('index2/', index2, name='page2'),
+    path('delete/', delete, name='delete'),
+    path('update/', update, name='update')
+
 ]

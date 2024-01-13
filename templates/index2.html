@@ -1,0 +1,52 @@
+<!-- page2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Data</title>
+</head>
+<body>
+    <h1>Add Data</h1>
+    <a href="{% url 'chart' %}"><--Home</a>
+    <form id="addForm" method="post" action="{% url 'page2' %}">
+    {% csrf_token %}
+         <div>
+        <label for="addDate">Date:</label>
+        <input type="text" name="addDate" required>
+    </div>
+    
+    <div>
+        <label for="addTradeCode">Trade Code:</label>
+        <input type="text" name="addTradeCode" required>
+    </div>
+    
+    <div>
+        <label for="high">High:</label>
+        <input type="text" name="high">
+    </div>
+    
+    <div>
+        <label for="low">Low:</label>
+        <input type="text" name="low">
+    </div>
+    
+    <div>
+        <label for="open">Open:</label>
+        <input type="text" name="open">
+    </div>
+    
+    <div>
+        <label for="close">Close:</label>
+        <input type="text" name="close">
+    </div>
+    
+    <div>
+        <label for="volume">Volume:</label>
+        <input type="text" name="volume">
+    </div>
+    
+    <button type="submit">Add</button>
+</form>
+   
+</body>
+</html>

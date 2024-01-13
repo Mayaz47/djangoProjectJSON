@@ -3,10 +3,10 @@ from django.utils import timezone
 from django.db import models
 
 class MyData(models.Model):
-    date = models.DateField(default=timezone.now)
+    date = models.CharField(max_length=255)
     trade_code = models.CharField(max_length=255)
-    high = models.FloatField(default= 0)
-    low = models.FloatField(default= 0)
-    open = models.FloatField(default= 0)
-    close = models.FloatField(default= 0)
-    volume = models.IntegerField()
+    high = models.CharField(max_length=255)
+    low = models.CharField(max_length=255)
+    open = models.CharField(max_length=255)
+    close = models.CharField(max_length=255)
+    volume = models.CharField(max_length=255)

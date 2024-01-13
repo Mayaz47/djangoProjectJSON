@@ -1,0 +1,29 @@
+<!-- page2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Data</title>
+    
+</head>
+<body>
+    <h1>Delete Data</h1>
+    <a href="{% url 'chart' %}"><--Home</a>
+    <form id="deleteForm" method="post" action="{% url 'delete' %}">
+    {% csrf_token %}
+         <div>
+        <label for="deleteDate">Date:</label>
+        <input type="text" name="deleteDate" required>
+    </div>
+    
+    <div>
+        <label for="deleteTradeCode">Trade Code:</label>
+        <input type="text" name="deleteTradeCode" required>
+    </div>
+    
+    
+    <button type="submit">Delete</button>
+</form>
+   
+</body>
+</html>

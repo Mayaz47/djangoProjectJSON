@@ -1,9 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Tracker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart table</title>
+    
 </head>
 <body>
+    <a href="{% url 'page2' %}"><button>Add Data</button></a>
+    <a href="{% url 'delete' %}"><button>Delete Data</button></a>
+    <a href="{% url 'update' %}"><button>Update Data</button></a>
+    <h1>Charts and Graphs</h1>
+    <label for="options">Select an option:</label>
+    <select id="options" onchange="displayImage()">
+        <option value="O">None</option>
+        <option value="A">Sort by Date</option>
+        <option value="B">Sort by Trade Code</option>
+        <option value="C">Relation Plot</option>
+        <option value="D">Normalized Box Plot</option>
+        <option value="F">Regression Plot</option>
+    </select>
+    <div id="imageContainer">
+    </div>
+    <script>
+        function displayImage() {
+            var selectedOption = document.getElementById("options").value;
+            var imageContainer = document.getElementById("imageContainer");
+
+        // Clear previous content
+            imageContainer.innerHTML = "";
+    
+            // Create an img element and set its source based on the selected option
+            var img = document.createElement("img");
+            img.setAttribute("alt", "Image");
+    
+            if (selectedOption === "A") {
+                img.setAttribute("src", "data:image/png;base64,{{ img1 }}");
+            } else if (selectedOption === "B") {
+                img.setAttribute("src", "data:image/png;base64,{{ img2 }}");
+            } else if (selectedOption === "C") {
+                img.setAttribute("src", "data:image/png;base64,{{ img3 }}");
+            }else if (selectedOption === "D") {
+                img.setAttribute("src", "data:image/png;base64,{{ img4 }}");
+            }else if (selectedOption === "F") {
+                img.setAttribute("src", "data:image/png;base64,{{ img5 }}");
+            }else if (selectedOption === "O") {
+                img.setAttribute();
+            }
+    
+            // Append the img element to the imageContainer
+            imageContainer.appendChild(img);
+    }
+    </script>
+    
     <table border="1">
         <tr>
             <th>Date</th>
